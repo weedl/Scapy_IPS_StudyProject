@@ -4,8 +4,8 @@ import imghdr
 
 from matplotlib.cbook import report_memory
 
-EMAIL_ADDRESS = 'vetleeraa@gmail.com'
-EMAIL_PASSWORD = 'tfwqebcilwtekiyq'
+EMAIL_ADDRESS = 'automated.report@freelabs.com'
+EMAIL_PASSWORD = ''
 
 def sendmail():
     global date
@@ -13,7 +13,7 @@ def sendmail():
     msg = EmailMessage()
     msg['Subject'] = 'Daily IPS report'
     msg['From'] = EMAIL_ADDRESS
-    msg['To'] = 'vetleeraa@gmail.com'  # insert head of security's information here
+    msg['To'] = 'head.of.securitt@freelabs.com'  # insert head of security's information here
 
     with open('incident_report.txt' + date, 'r') as f: # insert path to report file here
         file_data = f.read()
