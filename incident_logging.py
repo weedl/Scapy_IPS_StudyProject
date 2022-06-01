@@ -7,9 +7,9 @@ def new_log():
     f.close()
     # this block of code will wipe the file - making it ready for a new period of reporting
 
-def write():
+def write(incident):
     f = open('incident_report', 'a')
-    f.write('This is an incident with code 404\n') # insert whatever shall be written to the file once an incident occurs here
+    f.write(incident) # insert whatever shall be written to the file once an incident occurs here
     f.close()
 
 def cplog(date):
