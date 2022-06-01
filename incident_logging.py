@@ -17,9 +17,11 @@ def cplog(date):
     report = r'incident_report.txt' + date
     log = r'path to log file' + 'log' + date
     cmd = 'cp'
+    
     try:
         copy_report = subprocess.Popen([cmd, report, log] stdout = subprocess.PIPE)
         print(r'Report {} has been logged to the path: {}'.format(report, log)
+   
     except:
         print('An error occured while trying to copy {} to destination')
               
