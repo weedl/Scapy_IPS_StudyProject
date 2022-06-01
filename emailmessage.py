@@ -8,13 +8,14 @@ EMAIL_ADDRESS = 'vetleeraa@gmail.com'
 EMAIL_PASSWORD = 'tfwqebcilwtekiyq'
 
 def sendmail():
+    global date
     global msg
     msg = EmailMessage()
     msg['Subject'] = 'Daily IPS report'
     msg['From'] = EMAIL_ADDRESS
     msg['To'] = 'vetleeraa@gmail.com'  # insert head of security's information here
 
-    with open('incident_report.txt', 'r') as f: # insert path to report file here
+    with open('incident_report.txt' + date, 'r') as f: # insert path to report file here
         file_data = f.read()
         file_type = imghdr.what(f.name)
 
@@ -24,5 +25,3 @@ def sendmail():
         smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
 
         smtp.send_message
-
-sendmail()
