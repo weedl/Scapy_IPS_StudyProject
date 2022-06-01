@@ -1,6 +1,5 @@
-import os
 import shutil
-import subprocess
+
 
 def new_log(date):
     f = open('incident_report.txt' + date, 'w')
@@ -16,13 +15,8 @@ def write(date):
 def cplog(date):
     report = r'incident_report.txt' + date
     log = r'path to log file' + 'log' + date
-    cmd = 'cp'
-    
     try:
-        copy_report = subprocess.Popen([cmd, report, log] stdout = subprocess.PIPE)
-        print(r'Report {} has been logged to the path: {}'.format(report, log)
-   
+        shutil.copyfile(report, log, follow_symlinks=True)
     except:
-        print('An error occured while trying to copy {} to destination')
-              
+        print('could not copy file to location')
               
