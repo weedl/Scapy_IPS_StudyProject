@@ -9,12 +9,12 @@ def new_log():
 
 def write(incident):
     f = open('incident_report', 'a')
-    f.write(incident) # insert whatever shall be written to the file once an incident occurs here
+    f.write(incident + '\n') # insert whatever shall be written to the file once an incident occurs here
     f.close()
 
 def cplog(date):
     report = r'incident_report'
-    log = r'path to log directory' + report + '.' + date + '.txt'
+    log = r'path to log directory' + date + report + '.txt'
     try:
         shutil.copyfile(report, log, follow_symlinks=True)
     except:
