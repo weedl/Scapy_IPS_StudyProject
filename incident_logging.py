@@ -1,8 +1,5 @@
-from calendar import month
 import os
-from datetime import *
 import shutil
-from time import strptime
 
 def new_log():
     f = open('incident_report.txt', 'w')
@@ -22,7 +19,3 @@ def cplog():
     # this blcok of code is supposed to copy the content of the incident report txt file, and write it to a log directory. The log
     # directory is supposed to be organized by date and time of the report. For instance the 08:00 report will be marked with:
     # 08 - dd.mm.yyyy
-month_num = '3'
-datetime_object = datetime.strptime(month_num, '%m')
-month = datetime_object.strftime('%b')
-print(month)
