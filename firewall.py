@@ -8,6 +8,8 @@ def block_ip(malADDR): # malADDR wil be the address which is found to send a mal
         # everything between the [] is the command used to block the ip
 
         print(r'Successfully blocked the address: {}.'.format(malADDR))
+        
+        save_rules = subprocess.Popen(['sudo', 'netfilter-persistent', 'save'], stdout = subprocess.PIPE)
 
     except:
         print('Were not able to block the address')
